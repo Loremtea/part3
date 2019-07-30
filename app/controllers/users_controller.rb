@@ -15,11 +15,12 @@ class UsersController < ApplicationController
     # @user = User.new(params[:user])    # 実装は終わっていないことに注意!
     if @user.save
       # 保存の成功をここで扱う。
+      log_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
       flash.now[:alert] = @user.errors.full_messages
-      debugger
+      # debugger
       # .join($RS)
       render 'new'
     end
