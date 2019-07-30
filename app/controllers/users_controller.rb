@@ -18,7 +18,9 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
-      flash.now[:alert] = @user.errors.full_messages.join($RS)
+      flash.now[:alert] = @user.errors.full_messages
+      debugger
+      # .join($RS)
       render 'new'
     end
   end
