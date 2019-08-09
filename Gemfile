@@ -8,12 +8,18 @@ gem 'rails'
 gem 'bcrypt'
 gem 'faker'
 gem 'will_paginate'
+
+gem 'carrierwave'
+gem 'mini_magick'
+
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 # Use postgresql as the database for Active Record
-gem 'pg'
+group :production do
+  gem 'pg'
+end
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
